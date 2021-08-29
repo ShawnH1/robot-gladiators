@@ -6,9 +6,29 @@ var playerMoney = 10;
 //You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth, playerMoney);
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[1]);
+console.log(enemyNames[2]);
+for(var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+}
+for (var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+}
 var enemyHealth = 50;
 var enemyAttack = 12;
+
+
+
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//      * Fight all enemy-robots
+//      * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
 
 var fight = function() {
     //Alert players that they are starting the round
@@ -54,17 +74,21 @@ var fight = function() {
       if (confirmSkip) {
           window.alert(playerName + " has decided to skip this fight. Good bye!")
           // subtract money from playerMoney for skipping
+          //Note: the player should be notified that skipping the fight
+          // will result in a penalty
           playerMoney = playerMoney - 2;
       }
       //if no (false), ask question again by running fight() again
       else {
           fight()
       }
-  }
+q   //if player confirms that they want to skip the fight.
     window.alert(playerName + " has chosen to skip the fight!");
-  } else {
+  }
+  // if player responds with an invalid response. 
+    else {
     window.alert("You need to choose a valid option. Try again!");
   }
 }
    
-    fight();
+    fight(enemyRobot);
