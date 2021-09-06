@@ -43,7 +43,7 @@ var startGame = function(){
 };
 
 //function to end the entire game
-var endgmae = function() {
+var endgame = function() {
   //if player is still alive, player wins!
   if (playerHealth > 0) {
     window.alert ("Great job, you've survived the game!  You now have a score of " + playerMoney + ".");
@@ -63,7 +63,9 @@ else {
   window.alert("Thank you for playing Robot Gladiators!  Come back soon!!");
 }
 
-// fight function (now with parameter for enemy's name)
+// fight function (now with parameter for enemy's name) CODE BROKEN HERE, COMPARE TO CODE SNAPSHOT FOR ERROR?
+//Possible cause of issue?: Notice that the code in the createTaskHandler() function replicates the code block in the anonymous function. 
+//It's important to place this function expression before the event listener. Otherwise, we'd receive an error that createTaskHandler() isn't defined because we'd be calling the function before we defined it
 var fight = function (enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
     // ask player if they'd like to fight or run
